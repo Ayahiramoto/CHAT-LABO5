@@ -606,6 +606,11 @@ function updateReactions(id, reactions){
         showToast('ユーザー名に「管理者」を含めることはできません');
         return;
       }
+        if(/すけべ太郎/.test(v)){
+        showToast('ユーザー名に「すけべ太郎」を含めることはできません');
+        return;
+        }
+      
       myName = v;
       storage.name = myName;
       el.usernameTag.textContent = myName;
@@ -615,11 +620,11 @@ function updateReactions(id, reactions){
       }
       closeUserModal();
       showToast('プロフィールを保存しました');
-    } catch (err) {
+     } catch (err) {
       if(el.userSave) el.userSave.disabled = false;
       console.error(err);
       showToast('保存に失敗しました');
-    }
+     }
   });
 
   el.adminOpen.addEventListener('click', openAdminModal);
@@ -700,7 +705,8 @@ function updateReactions(id, reactions){
     }
   });
 
-})();
+});
 </script>
 </body>
 </html>
+}
