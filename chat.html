@@ -606,6 +606,10 @@ function updateReactions(id, reactions){
         showToast('ユーザー名に「管理者」を含めることはできません');
         return;
       }
+      if(/すけべ太郎/.test(v)){
+        showToast('ユーザー名に「すけべ太郎」を含めることはできません');
+        return;
+      }
       myName = v;
       storage.name = myName;
       el.usernameTag.textContent = myName;
